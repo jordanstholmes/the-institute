@@ -2,9 +2,10 @@
   "name": "the-institute",
   "version": "1.0.0",
   "description": "MVP for a new and improved Chet Holmes Institute UX",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "test": "npm test"
+    "dev": "nodemon src/index.js",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -22,5 +23,8 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1"
+  },
+  "dependencies": {
+    "express": "^4.16.4"
   }
 }
