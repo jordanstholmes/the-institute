@@ -1,0 +1,26 @@
+{
+  "name": "the-institute",
+  "version": "1.0.0",
+  "description": "MVP for a new and improved Chet Holmes Institute UX",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jordanstholmes/the-institute.git"
+  },
+  "author": "Jordan Holmes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jordanstholmes/the-institute/issues"
+  },
+  "homepage": "https://github.com/jordanstholmes/the-institute#readme",
+  "devDependencies": {
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1"
+  }
+}
