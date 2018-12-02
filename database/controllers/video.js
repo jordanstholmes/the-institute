@@ -1,5 +1,8 @@
-const { ObjectId } = require('mongoose').Types;
-const Video = require('../models/video.js');
+import mongoose from 'mongoose';
+import Video from '../models/video';
+
+const { ObjectId } = mongoose.Types;
+// ObjectId
 
 const getVideoById = id => new Promise((resolve, reject) => {
   Video.findById({ _id: ObjectId(id) }, (err, response) => {
@@ -8,4 +11,4 @@ const getVideoById = id => new Promise((resolve, reject) => {
   });
 });
 
-module.exports = getVideoById;
+export default getVideoById;

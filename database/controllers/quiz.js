@@ -1,4 +1,4 @@
-const Quiz = require('../models/quiz.js');
+import Quiz from '../models/quiz';
 
 const getQuizByName = quizName => new Promise((resolve, reject) => {
   Quiz.findById({ _id: quizName }, (err, response) => {
@@ -7,4 +7,4 @@ const getQuizByName = quizName => new Promise((resolve, reject) => {
   });
 });
 
-module.exports = getQuizByName;
+export default getQuizByName;

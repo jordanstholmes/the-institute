@@ -1,6 +1,7 @@
-const express = require('express');
-const morgan = require('morgan');
-const db = require('../database/index.js');
+import morgan from 'morgan';
+import express from 'express';
+
+import { getVideoById, getQuizByName } from '../../database';
 
 const port = process.env.PORT || 7000;
 const url = process.env.URL || 'localhost';
@@ -11,7 +12,7 @@ const logging = process.env.NODE_ENV === 'production' ? morgan('short') : morgan
 // temporarily hardcode videoId: '5c032bc929a362516c22b2fe'
 app.use(logging);
 app.get('/videos/:videoId', (req, res) => {
-  db.getVideoById('5c032bc929a362516c22b2fe')
+  getVideoById('5c032bc929a362516c22b2fe')
     .then(video => res.send(video))
     .catch((err) => {
       console.err('getVideoById error:', err);
@@ -21,7 +22,7 @@ app.get('/videos/:videoId', (req, res) => {
 
 // temporarily hardcode quizName: 'SESSION 9 QUIZ'
 app.get('/quizzes/:quizName', (req, res) => {
-  db.getQuizByName('SESSION 9 QUIZ')
+  getQuizByName('SESSION 9 QUIZ')
     .then(quiz => res.send(quiz))
     .catch((err) => {
       console.err('getQuizByName error:', err);
