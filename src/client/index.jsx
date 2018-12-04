@@ -1,13 +1,7 @@
 /* eslint-env browser */
 import React from 'react';
 import ReactDom from 'react-dom';
-import styled from 'styled-components';
-import Video from './components/Video';
+import VideoContainer from './containers/VideoContainer';
+import store from './store/store';
 
-const StyledHello = styled.h1`
-  color: red;
-`;
-
-const HelloWorld = () => <StyledHello>Hello World</StyledHello>;
-
-ReactDom.render(<Video />, document.getElementById('app'));
+ReactDom.render(<VideoContainer store={store} />, document.getElementById('app'));
