@@ -10,6 +10,13 @@ const Wrapper = styled.section`
   align-items: center;
 `;
 
+const Nav = styled.div`
+  margin: 20px;
+  width: 500px;
+  display: flex;
+  justify-content: space-around;
+`
+
 class Video extends React.Component {
   componentDidMount() {
     const { fetchVideo } = this.props;
@@ -22,7 +29,10 @@ class Video extends React.Component {
       <Wrapper>
         <h1>{title}</h1>
         <ReactPlayer url={source} playing={false} width="800px" height="450px" />
-        <button type="button" onClick={fetchVideo}>Switch</button>
+        <Nav>
+          <button type="button" onClick={fetchVideo}>Previous</button>
+          <button type="button" onClick={fetchVideo}>Next</button>
+        </Nav>
       </Wrapper>
     );
   }
