@@ -6,7 +6,8 @@ import PropTypes from 'prop-types';
 
 const Wrapper = styled.section`
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const Video = ({ fetchVideo, title, source }) => (
