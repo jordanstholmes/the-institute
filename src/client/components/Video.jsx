@@ -9,17 +9,20 @@ const Wrapper = styled.section`
   justify-content: center;
 `;
 
-const Video = ({ switchVideo, source }) => (
+const Video = ({ fetchVideo, title, source }) => (
   <Wrapper>
+    <h1>{title}</h1>
     <ReactPlayer url={source} playing={false} width="800px" height="450px" />
-    <button type="button" onClick={switchVideo}>Switch</button>
+    <button type="button" onClick={fetchVideo}>Switch</button>
   </Wrapper>
 );
 
 
 Video.propTypes = {
-  switchVideo: PropTypes.func.isRequired,
+  // switchVideo: PropTypes.func.isRequired,
   source: PropTypes.string.isRequired,
+  fetchVideo: PropTypes.func.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 export default Video;

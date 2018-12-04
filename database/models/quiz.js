@@ -7,7 +7,7 @@ const questionSchema = mongoose.Schema({
 });
 
 const quizSchema = mongoose.Schema({
-  _id: String, // Name of the quiz goes here
+  title: String,
   questions: [questionSchema],
 });
 
