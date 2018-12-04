@@ -8,7 +8,7 @@ const Wrapper = styled.section`
 `;
 
 const InnerWrapper = styled.section`
-  margin: 0 15%;
+  margin: 0 25%;
 `;
 
 class Quiz extends React.Component {
