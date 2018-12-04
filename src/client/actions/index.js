@@ -1,7 +1,5 @@
 import fetch from 'isomorphic-fetch';
 
-const quizApiUrl = '//localhost:7000/quizzes/10';
-
 export const REQUEST_VIDEO = 'REQUEST_VIDEO';
 export const RECEIVE_VIDEO = 'RECEIVE_VIDEO';
 export const REQUEST_QUIZ = 'REQUEST_QUIZ';
@@ -20,7 +18,7 @@ function requestQuiz(quizId) {
 }
 
 function receiveQuiz(quiz) {
-  return { type: RECEIVE_QUIZ, quizId: quiz._id, quizTitle: quiz.title };
+  return { type: RECEIVE_QUIZ, quiz };
 }
 
 export function fetchVideo(videoId) {
@@ -37,8 +35,8 @@ export function fetchQuiz(quizId) {
   return (dispatch) => {
     dispatch(requestQuiz(quizId));
 
-    return fetch(quizApiUrl)
+    return fetch(`http://localhost:7000/quizzes/${quizId}`)
       .then(response => response.json(), err => console.log('An error occurred', err))
-      .then(json => dispatch(receiveQuiz(quizId, json)));
+      .then(quiz => dispatch(receiveQuiz(quiz)));
   };
 }

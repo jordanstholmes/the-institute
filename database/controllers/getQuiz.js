@@ -1,10 +1,10 @@
 import Quiz from '../models/quiz';
 
-const getQuizByName = quizName => new Promise((resolve, reject) => {
-  Quiz.findById({ _id: quizName }, (err, response) => {
+const getQuizById = quizId => new Promise((resolve, reject) => {
+  Quiz.findById({ _id: quizId }, (err, response) => {
     if (err) return reject(err);
     return resolve(response);
   });
 });
 
-export default getQuizByName;
+export default getQuizById;

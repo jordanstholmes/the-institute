@@ -1,7 +1,7 @@
 import morgan from 'morgan';
 import express from 'express';
 
-import { getVideoById, getQuizByName } from '../../database';
+import { getVideoById, getQuizById } from '../../database';
 
 const port = process.env.PORT || 7000;
 const url = process.env.URL || 'localhost';
@@ -18,17 +18,18 @@ app.get('/videos/:videoId', (req, res) => {
   getVideoById(videoId)
     .then(video => res.send(video))
     .catch((err) => {
-      console.err('getVideoById error:', err);
+      console.error('getVideoById error:', err);
       res.sendStatus(404);
     });
 });
 
 // temporarily hardcode quizName: 'SESSION 9 QUIZ'
-app.get('/quizzes/:quizName', (req, res) => {
-  getQuizByName('SESSION 9 QUIZ')
+app.get('/quizzes/:quizId', (req, res) => {
+  const { quizId } = req.params;
+  getQuizById(quizId)
     .then(quiz => res.send(quiz))
     .catch((err) => {
-      console.err('getQuizByName error:', err);
+      console.error('getQuizByName error:', err);
       res.send(404);
     });
 });
