@@ -3,6 +3,14 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Question from './Question';
 
+const Wrapper = styled.section`
+  width: 100%;
+`;
+
+const InnerWrapper = styled.section`
+  margin: 0 15%;
+`;
+
 class Quiz extends React.Component {
   componentDidMount() {
     const { fetchQuiz } = this.props;
@@ -10,25 +18,22 @@ class Quiz extends React.Component {
   }
 
   render() {
-    console.log('log quiz props', this.props);
     const { title, questions } = this.props;
-    console.log('log the questions:', questions);
     return (
-      <div>
-        <h1>{title}</h1>
-        {questions.map(question => <Question question={question} key={question._id} />)}
-      </div>
+      <Wrapper>
+        <InnerWrapper>
+          <h1>{title}</h1>
+          {questions.map(question => <Question question={question} key={question._id} />)}
+        </InnerWrapper>
+      </Wrapper>
     );
   }
 }
 
-// const Quiz = ({ title, questions }) => {
-//   return (
-//     <div>
-//       <h1>{title}</h1>
-//       {questions.map(question => <Question question={question} key={question._id} />)}
-//     </div>
-//   );
-// };
+Quiz.propTypes = {
+  title: PropTypes.string.isRequired,
+  fetchQuiz: PropTypes.func.isRequired,
+  questions: PropTypes.string.isRequired,
+};
 
 export default Quiz;
