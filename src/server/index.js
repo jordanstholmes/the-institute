@@ -12,7 +12,6 @@ const logging = process.env.NODE_ENV === 'production' ? morgan('short') : morgan
 app.use(logging);
 app.use(express.static('public'));
 
-// temporarily hardcode videoId: '5c032bc929a362516c22b2fe'
 app.use(logging);
 app.get('/videos/:videoId', (req, res) => {
   const { videoId } = req.params;

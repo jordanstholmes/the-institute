@@ -42,5 +42,3 @@ export function fetchQuiz(quizId) {
       .then(json => dispatch(receiveQuiz(quizId, json)));
   };
 }
-
-// removed error from first then after fetch: , err => console.log('An error occurred', err)

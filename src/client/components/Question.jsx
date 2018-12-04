@@ -8,39 +8,17 @@ const Wrapper = styled.div`
   align-items: flex-start;
 `;
 
-const Question = ({ questionText, answerOptions }) => (
+const Question = ({ question }) => (
   <Wrapper>
-    <h2>{questionText}</h2>
+    <h2>{question.questionText}</h2>
     <ul>
-      {answerOptions.map((option, idx) => <div key={idx}>{option}</div>)}
+      {question.answerOptions.map((option, idx) => <div key={idx}>{option}</div>)}
     </ul>
   </Wrapper>
 );
 
 Question.propTypes = {
-  questionText: PropTypes.string.isRequired,
 };
 
 
 export default Question;
-
-/*
-Store Shape:
-{
-  video: {
-    title: String,
-    source: String,
-    quiz_id: string
-  },
-  quiz: {
-    title: String,
-    questions: [
-      {
-        questionText: String
-        answerOptions: [strings]
-        answer: [strings]
-      }
-    ]
-  }
-}
-*/

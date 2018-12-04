@@ -12,24 +12,3 @@ export default createStore(
     loggerMiddleware,
   ),
 );
-
-/*
-Store Shape:
-{
-  video: {
-    title: String,
-    source: String,
-    quiz_id: string
-  },
-  quiz: {
-    title: String,
-    questions: [
-      {
-        questionText: String
-        answerOptions: [strings]
-        answer: [strings]
-      }
-    ]
-  }
-}
-*/

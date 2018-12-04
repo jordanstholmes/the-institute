@@ -18,27 +18,3 @@ export default function (state = defaultVideo, action) {
       return state;
   }
 }
-
-/*
-Store Shape:
-{
-  video: {
-    title: String,
-    source: String,
-    quiz_id: String
-  },
-  quiz: {
-    title: String,
-    questions: [
-      {
-        questionText: String
-        answerOptions: [strings]
-        answer: [strings]
-      }
-    ]
-  }
-}
-*/
-
-
-// const video2 = 'https://player.vimeo.com/video/109259708?title=0&byline=0&portrait=0';
