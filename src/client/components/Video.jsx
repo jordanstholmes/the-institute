@@ -8,6 +8,7 @@ const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: ${props => props.theme.font};
 `;
 
 const Nav = styled.div`
@@ -15,7 +16,7 @@ const Nav = styled.div`
   width: 500px;
   display: flex;
   justify-content: space-around;
-`
+`;
 
 class Video extends React.Component {
   componentDidMount() {

@@ -9,6 +9,7 @@ const Wrapper = styled.section`
 
 const InnerWrapper = styled.section`
   margin: 0 25%;
+  font-family: ${props => props.theme.font};
 `;
 
 class Quiz extends React.Component {
@@ -23,7 +24,9 @@ class Quiz extends React.Component {
       <Wrapper>
         <InnerWrapper>
           <h1>{title}</h1>
-          {questions.map(question => <Question question={question} key={question._id} />)}
+          <ol>
+            {questions.map(question => <Question question={question} key={question._id} />)}
+          </ol>
         </InnerWrapper>
       </Wrapper>
     );
