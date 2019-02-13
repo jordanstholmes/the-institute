@@ -1,5 +1,12 @@
 import morgan from 'morgan';
 import express from 'express';
+import React from 'react';
+import ReactDOMServer from 'react-dom/server';
+import fetch from 'isomorphic-fetch';
+
+import indexTemplate from './indexTemplate';
+import ReactComponents from './rootReact';
+// import dummyQuiz from '../client/tempQuizData';
 
 import { getVideoById, getQuizById } from '../../database';
 
@@ -10,6 +17,13 @@ const app = express();
 const logging = process.env.NODE_ENV === 'production' ? morgan('short') : morgan('dev');
 
 app.use(logging);
+app.get('/', (req, res) => {
+  console.log('hit root get');
+  const reactStr = ReactDOMServer.renderToString(ReactComponents);
+  const ssr = indexTemplate(reactStr);
+  res.send(ssr);
+});
+
 app.use(express.static('public'));
 
 app.use(logging);
