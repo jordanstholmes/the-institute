@@ -33,9 +33,12 @@ const serverConfig = {
     filename: 'server.js',
     publicPath: '/',
   },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
   module: {
     rules: [
-      { test: /\.(js)$/, use: 'babel-loader' },
+      { test: /\.(js|jsx)$/, use: 'babel-loader' },
     ],
   },
   plugins: [

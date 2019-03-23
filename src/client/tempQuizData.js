@@ -56,7 +56,7 @@ export default {
       _id: '5c06c63a585ed5090417a6d8',
       questionText:
         'You should tell your life story to the gatekeeper, who absolutely wants to hear it'
-    }
+    },
   ],
   __v: 0
 };
