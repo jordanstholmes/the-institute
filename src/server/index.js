@@ -6,7 +6,6 @@ import fetch from 'isomorphic-fetch';
 
 import indexTemplate from './indexTemplate';
 import ReactComponents from './rootReact';
-// import dummyQuiz from '../client/tempQuizData';
 
 import { getVideoById, getQuizById } from '../../database';
 
@@ -37,7 +36,6 @@ app.get('/videos/:videoId', (req, res) => {
     });
 });
 
-// temporarily hardcode quizName: 'SESSION 9 QUIZ'
 app.get('/quizzes/:quizId', (req, res) => {
   const { quizId } = req.params;
   getQuizById(quizId)

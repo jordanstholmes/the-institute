@@ -25,13 +25,4 @@ const ReactComponents = (
   </Provider>
 );
 
-// ReactDom.render(
-//   <Provider store={store}>
-//     <ThemeProvider theme={theme}>
-//       <App />
-//     </ThemeProvider>
-//   </Provider>,
-//   document.getElementById('app'),
-// );
-
 export default ReactComponents;
