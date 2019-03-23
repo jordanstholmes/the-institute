@@ -1,7 +1,9 @@
 import morgan from 'morgan';
 import express from 'express';
+// eslint-disable-next-line
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
+// eslint-disable-next-line
 import fetch from 'isomorphic-fetch';
 
 import indexTemplate from './indexTemplate';
