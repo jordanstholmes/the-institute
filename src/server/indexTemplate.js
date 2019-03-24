@@ -14,8 +14,6 @@ const indexHTMLTemplate = reactStr => `
     <body>
       <div id="app">${reactStr}</div>
     </body>
-    <script src="/lib/react.development.js"></script>
-    <script src="/lib/react-dom.development.js"></script>
     <script src="./bundle.js"></script>
   </html>`;
 

@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
 import VideoContainer from './containers/VideoContainer';
 import QuizContainer from './containers/QuizContainer';
+import NavBar from './components/NavBar';
 import store from './store';
 
 const theme = {
@@ -13,6 +14,7 @@ const theme = {
 
 const App = () => (
   <div>
+    <NavBar moduleTitle="Getting Appointments" subModuleTitle="Getting Past the Gatekeeper" />
     <VideoContainer />
     <QuizContainer />
   </div>
