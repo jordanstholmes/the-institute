@@ -2,16 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-const Wrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  height: 60px;
-  background-color: #ee2d24;
-  color: white;
-  align-items: center;
-  padding: 0 30px;
-  font-family: ${props => props.theme.font};
-`;
+import { NavBarContentSplitTwoSides } from '../styled-components/basicNav';
 
 const VerticalCenterWrapper = styled.div`
   display: flex;
@@ -32,11 +23,11 @@ const LeftNavElement = styled.div`
   margin-left: 20px;
 `;
 
-const NavBar = ({ moduleTitle, subModuleTitle }) => (
-  <Wrapper>
+const NavBar = ({ subModuleTitle }) => (
+  <NavBarContentSplitTwoSides>
     <VerticalCenterWrapper>
       <img src="nav-gear-white.png" alt="logo" />
-      <LeftNavElement>{moduleTitle}</LeftNavElement>
+      <LeftNavElement>The high art of getting appointments</LeftNavElement>
       <LeftNavElement>{">"}</LeftNavElement>
       <LeftNavElement>{subModuleTitle}</LeftNavElement>
     </VerticalCenterWrapper>
@@ -46,11 +37,10 @@ const NavBar = ({ moduleTitle, subModuleTitle }) => (
       <MainNavElement>Settings</MainNavElement>
       <MainNavElement>Logout</MainNavElement>
     </VerticalCenterWrapper>
-  </Wrapper>
+  </NavBarContentSplitTwoSides>
 );
 
 NavBar.propTypes = {
-  moduleTitle: PropTypes.string.isRequired,
   subModuleTitle: PropTypes.string.isRequired,
 };
 

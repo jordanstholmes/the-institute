@@ -8,7 +8,6 @@ const indexHTMLTemplate = reactStr => `
       <meta charset="UTF-8">
       <title>Chet Holmes Institute</title>
       <link rel="icon" type="image/png" href="${favIconUri}">
-      <!-- <link href="CSS FILEPATH/NAME HERE" rel="stylesheet" type="text/css"/> -->
     </head>
 
     <body>
