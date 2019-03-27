@@ -5,8 +5,7 @@ import styled from 'styled-components';
 const Div = styled.div`
   height: 506px;
   width: 100%;
-  background-color: #E7E6E6;
-  margin-left: 15px;
+  background-color: #e7e6e6;
 `;
 
 const VideoList = () => {

@@ -2,12 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-import { NavBarContentSplitTwoSides } from '../styled-components/basicNav';
-
-const VerticalCenterWrapper = styled.div`
-  display: flex;
-  align-items: center;
-`;
+import { NavBarContentSplitTwoSides } from '../styled-components/basicNavStyles';
+import { CenterVertically } from '../styled-components/layoutStyles';
 
 const MainNavElement = styled.div`
   margin-right: 20px;
@@ -25,18 +21,17 @@ const LeftNavElement = styled.div`
 
 const NavBar = ({ subModuleTitle }) => (
   <NavBarContentSplitTwoSides>
-    <VerticalCenterWrapper>
+    <CenterVertically>
       <img src="nav-gear-white.png" alt="logo" />
       <LeftNavElement>The high art of getting appointments</LeftNavElement>
       <LeftNavElement>{">"}</LeftNavElement>
       <LeftNavElement>{subModuleTitle}</LeftNavElement>
-    </VerticalCenterWrapper>
-    <div />
-    <VerticalCenterWrapper>
+    </CenterVertically>
+    <CenterVertically>
       <MainNavElement>Modules</MainNavElement>
       <MainNavElement>Settings</MainNavElement>
       <MainNavElement>Logout</MainNavElement>
-    </VerticalCenterWrapper>
+    </CenterVertically>
   </NavBarContentSplitTwoSides>
 );
 

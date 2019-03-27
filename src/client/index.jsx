@@ -10,6 +10,7 @@ import VideoList from './components/VideoList';
 import store from './store';
 
 import GlobalStyle from './styled-components/globalStyles';
+import { RowLayout } from './styled-components/layoutStyles';
 
 const theme = {
   primaryFont: 'Arial, Helvetica, sans-serif',
@@ -17,19 +18,19 @@ const theme = {
   contrastColor: 'white',
 };
 
-const Wrapper = styled.div`
-  display: flex;
-  padding: 15px;
-`;
+// const Wrapper = styled.div`
+//   display: flex;
+//   padding: 15px;
+// `;
 
 const App = () => (
   <div>
     <GlobalStyle />
     <NavBarContainer />
-    <Wrapper>
+    <RowLayout>
       <VideoContainer />
       <VideoList />
-    </Wrapper>
+    </RowLayout>
     {/* <QuizContainer /> */}
   </div>
 );
