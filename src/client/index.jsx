@@ -4,13 +4,12 @@ import ReactDom from 'react-dom';
 import { Provider } from 'react-redux';
 import styled, { ThemeProvider } from 'styled-components';
 import VideoContainer from './containers/VideoContainer';
-import QuizContainer from './containers/QuizContainer';
+// import QuizContainer from './containers/QuizContainer';
 import NavBarContainer from './containers/NavBarContainer';
 import VideoList from './components/VideoList';
 import store from './store';
 
-import GlobalStyle from './styled-components/globalStyles';
-import { RowLayout } from './styled-components/layoutStyles';
+import GlobalStyle from './components/styledGlobalStyles';
 
 const theme = {
   primaryFont: 'Arial, Helvetica, sans-serif',
@@ -18,10 +17,14 @@ const theme = {
   contrastColor: 'white',
 };
 
-// const Wrapper = styled.div`
-//   display: flex;
-//   padding: 15px;
-// `;
+const RowLayout = styled.div`
+  display: flex;
+  padding: 15px 0;
+
+  > * {
+    margin: 0 15px;
+  }
+`;
 
 const App = () => (
   <div>
