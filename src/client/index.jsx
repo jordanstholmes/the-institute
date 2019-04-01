@@ -15,6 +15,7 @@ const theme = {
   primaryFont: 'Arial, Helvetica, sans-serif',
   primaryColor: '#ee2d24',
   contrastColor: 'white',
+  accentColor: '#eee8aa',
 };
 
 const RowLayout = styled.div`

@@ -2,15 +2,8 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import PropTypes from 'prop-types';
 
-
-const RowLayout = styled.div`
-  display: flex;
-  padding: 15px 0;
-
-  > * {
-    margin: 0 15px;
-  }
-`;
+import HomeIcon from './HomeIcon';
+import SettingsIcon from './SettingsIcon';
 
 const CenterVertically = styled.div`
   display: flex;
@@ -26,6 +19,14 @@ const CenteredPaddedChildren = styled.div`
   }
 `;
 
+const ModuleTitle = styled.h1`
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: ${props => props.theme.accentColor};
+`;
+
 const NavBarContentSplitTwoSides = styled.div`
   display: flex;
   justify-content: space-between;
@@ -33,7 +34,7 @@ const NavBarContentSplitTwoSides = styled.div`
   background-color: ${props => props.theme.primaryColor};
   color: ${props => props.theme.contrastColor};
   padding: 0 30px;
-  height: 60px;
+  height: 66px;
 `;
 
 const rotate = keyframes`
@@ -42,12 +43,14 @@ const rotate = keyframes`
   }
 
   to {
-    transform: rotate(360deg);
+    transform: rotate(45deg);
   }
 `;
 
 const Rotate = styled.div`
-  animation: ${rotate} 10s linear infinite;
+  :hover {
+    animation: ${rotate} 500ms linear;
+  }
 `;
 
 
@@ -58,7 +61,7 @@ const MainNavElement = styled.div`
 
   cursor: pointer;
   :hover {
-    color: #FCEDBF;
+    color: ${props => props.theme.accentColor};
   }
 
   transition-duration: 500ms;
@@ -68,15 +71,14 @@ const MainNavElement = styled.div`
 const NavBar = ({ subModuleTitle }) => (
   <NavBarContentSplitTwoSides>
     <CenteredPaddedChildren>
-      <Rotate><img src="nav-gear-white.png" alt="logo" /></Rotate>
-      <div>The high art of getting appointments</div>
+      <Rotate><img src="gear40px-min.svg" alt="logo" /></Rotate>
+      <ModuleTitle>The high art of getting appointments</ModuleTitle>
       <div>{'>'}</div>
       <div>{subModuleTitle}</div>
     </CenteredPaddedChildren>
     <CenterVertically>
-      <MainNavElement>Modules</MainNavElement>
-      <MainNavElement>Settings</MainNavElement>
-      <MainNavElement>Logout</MainNavElement>
+      <HomeIcon />
+      <SettingsIcon />
     </CenterVertically>
   </NavBarContentSplitTwoSides>
 );
@@ -86,14 +88,3 @@ NavBar.propTypes = {
 };
 
 export default NavBar;
-
-/*
-<CenterVertically>
-      <Rotate>
-        <img src="nav-gear-white.png" alt="logo" />
-      </Rotate>
-      <LeftNavElement>The high art of getting appointments</LeftNavElement>
-      <LeftNavElement>{'>'}</LeftNavElement>
-      <LeftNavElement>{
-
-*/
