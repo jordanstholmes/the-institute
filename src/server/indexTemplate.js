@@ -8,14 +8,12 @@ const indexHTMLTemplate = reactStr => `
       <meta charset="UTF-8">
       <title>Chet Holmes Institute</title>
       <link rel="icon" type="image/png" href="${favIconUri}">
-      <!-- <link href="CSS FILEPATH/NAME HERE" rel="stylesheet" type="text/css"/> -->
+      <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
     </head>
 
     <body>
       <div id="app">${reactStr}</div>
     </body>
-    <script src="/lib/react.development.js"></script>
-    <script src="/lib/react-dom.development.js"></script>
     <script src="./bundle.js"></script>
   </html>`;
 

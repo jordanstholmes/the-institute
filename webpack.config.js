@@ -12,6 +12,11 @@ const browserConfig = {
   resolve: {
     extensions: ['.js', '.jsx'],
   },
+  watch: true,
+  watchOptions: {
+    aggregateTimeout: 300,
+    ignored: /node_modules/,
+  },
   module: {
     rules: [
       { test: /\.(js|jsx)$/, use: 'babel-loader' },
@@ -35,6 +40,11 @@ const serverConfig = {
   },
   resolve: {
     extensions: ['.js', '.jsx'],
+  },
+  watch: true,
+  watchOptions: {
+    aggregateTimeout: 300,
+    ignored: /node_modules/,
   },
   module: {
     rules: [

@@ -4,7 +4,7 @@
   "description": "MVP for a new and improved Chet Holmes Institute UX",
   "private": true,
   "scripts": {
-    "dev": "webpack -w -d & nodemon server.js",
+    "dev": "webpack -d & nodemon server.js",
     "test": "jest"
   },
   "repository": {

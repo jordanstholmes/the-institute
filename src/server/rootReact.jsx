@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDom from 'react-dom';
 import { Provider } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
 import VideoContainer from '../client/containers/VideoContainer';
@@ -24,14 +23,5 @@ const ReactComponents = (
     </ThemeProvider>
   </Provider>
 );
-
-// ReactDom.render(
-//   <Provider store={store}>
-//     <ThemeProvider theme={theme}>
-//       <App />
-//     </ThemeProvider>
-//   </Provider>,
-//   document.getElementById('app'),
-// );
 
 export default ReactComponents;
