@@ -1,11 +1,10 @@
 import React from 'react';
-
 import styled from 'styled-components';
 
 const SVG = styled.svg`
   cursor: pointer;
   :hover {
-    fill: #eee8aa;
+    fill: ${props => props.theme.accentColor};
   }
   transition-duration: 300ms;
   transition-property: fill, stroke;

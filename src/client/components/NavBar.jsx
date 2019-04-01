@@ -5,17 +5,15 @@ import PropTypes from 'prop-types';
 import HomeIcon from './HomeIcon';
 import SettingsIcon from './SettingsIcon';
 
-const CenterVertically = styled.div`
-  display: flex;
-  align-items: center;
+const LeftContentWrapper = styled.div`
+  > * {
+    margin-right: 20px;
+  }
 `;
 
-const CenteredPaddedChildren = styled.div`
-  display: flex;
-  align-items: center;
-
+const RightContentWrapper = styled.div`
   > * {
-    margin-left: 20px;
+    margin-right: 40px;
   }
 `;
 
@@ -27,14 +25,21 @@ const ModuleTitle = styled.h1`
   color: ${props => props.theme.accentColor};
 `;
 
-const NavBarContentSplitTwoSides = styled.div`
+const StyledNav = styled.div`
+  height: 66px;
+  padding: 0 30px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  > * {
+    display: flex;
+    align-items: center;
+  }
+
   background-color: ${props => props.theme.primaryColor};
   color: ${props => props.theme.contrastColor};
-  padding: 0 30px;
-  height: 66px;
 `;
 
 const rotate = keyframes`
@@ -43,44 +48,27 @@ const rotate = keyframes`
   }
 
   to {
-    transform: rotate(45deg);
+    transform: rotate(360deg);
   }
 `;
 
 const Rotate = styled.div`
-  :hover {
-    animation: ${rotate} 500ms linear;
-  }
-`;
-
-
-const MainNavElement = styled.div`
-  margin-right: 20px;
-  width: 70px;
-  text-align: center;
-
-  cursor: pointer;
-  :hover {
-    color: ${props => props.theme.accentColor};
-  }
-
-  transition-duration: 500ms;
-  transition-property: color;
+  animation: ${rotate} 10s linear infinite;
 `;
 
 const NavBar = ({ subModuleTitle }) => (
-  <NavBarContentSplitTwoSides>
-    <CenteredPaddedChildren>
+  <StyledNav>
+    <LeftContentWrapper>
       <Rotate><img src="gear40px-min.svg" alt="logo" /></Rotate>
       <ModuleTitle>The high art of getting appointments</ModuleTitle>
       <div>{'>'}</div>
       <div>{subModuleTitle}</div>
-    </CenteredPaddedChildren>
-    <CenterVertically>
+    </LeftContentWrapper>
+    <RightContentWrapper>
       <HomeIcon />
       <SettingsIcon />
-    </CenterVertically>
-  </NavBarContentSplitTwoSides>
+    </RightContentWrapper>
+  </StyledNav>
 );
 
 NavBar.propTypes = {
