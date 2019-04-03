@@ -1,0 +1,4 @@
+export const REQUEST_VIDEO = 'REQUEST_VIDEO';
+export const RECEIVE_VIDEO = 'RECEIVE_VIDEO';
+export const REQUEST_QUIZ = 'REQUEST_QUIZ';
+export const RECEIVE_QUIZ = 'RECEIVE_QUIZ';
