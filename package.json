@@ -17,7 +17,7 @@
     "url": "https://github.com/jordanstholmes/the-institute/issues"
   },
   "jest": {
-    "setupFilesAfterEnv": "./test-config/setupEnzyme.js",
+    "setupFilesAfterEnv": ["./test-config/setupEnzyme.js"],
     "verbose": true
   },
   "homepage": "https://github.com/jordanstholmes/the-institute#readme",
