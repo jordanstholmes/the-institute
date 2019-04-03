@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "webpack -d & nodemon server.js",
-    "test": "jest"
+    "test": "jest --config=./test-config/jest.config.js"
   },
   "repository": {
     "type": "git",
@@ -15,10 +15,6 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/jordanstholmes/the-institute/issues"
-  },
-  "jest": {
-    "setupFilesAfterEnv": "./test-config/setupEnzyme.js",
-    "verbose": true
   },
   "homepage": "https://github.com/jordanstholmes/the-institute#readme",
   "devDependencies": {
