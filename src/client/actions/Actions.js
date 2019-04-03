@@ -12,12 +12,20 @@ export function receiveVideo(video) {
   return { type: types.RECEIVE_VIDEO, video };
 }
 
-export function requestQuiz(quizId) {
-  return { type: types.REQUEST_QUIZ, quizId };
+export function receiveVideoFailure(err) {
+  return { type: types.RECEIVE_VIDEO_FAILURE, err };
+}
+
+export function requestQuiz() {
+  return { type: types.REQUEST_QUIZ };
 }
 
 export function receiveQuiz(quiz) {
   return { type: types.RECEIVE_QUIZ, quiz };
+}
+
+export function receiveQuizFailure(err) {
+  return { type: types.RECEIVE_QUIZ_FAILURE, err };
 }
 
 export function fetchVideo(videoId) {
@@ -27,7 +35,7 @@ export function fetchVideo(videoId) {
     return fetch(`/videos/${videoId}`)
       .then(response => response.json())
       .then(video => dispatch(receiveVideo(video)))
-      .catch(err => console.log(err));
+      .catch(err => dispatch(receiveVideoFailure(err)));
   };
 }
 
@@ -38,6 +46,6 @@ export function fetchQuiz(quizId) {
     return fetch(`/quizzes/${quizId}`)
       .then(response => response.json())
       .then(quiz => dispatch(receiveQuiz(quiz)))
-      .catch(err => console.error(err));
+      .catch(err => dispatch(receiveQuizFailure(err)));
   };
 }
