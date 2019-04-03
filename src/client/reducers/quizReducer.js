@@ -1,4 +1,4 @@
-import { REQUEST_QUIZ, RECEIVE_QUIZ } from '../actions';
+import { REQUEST_QUIZ, RECEIVE_QUIZ } from '../actions/ActionTypes';
 
 const placeHolderQuiz = {
   title: '',

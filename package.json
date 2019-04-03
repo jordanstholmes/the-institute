@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "webpack -d & nodemon server.js",
-    "test": "jest"
+    "test": "jest --config=./test-config/jest.config.js"
   },
   "repository": {
     "type": "git",
@@ -17,15 +17,6 @@
     "url": "https://github.com/jordanstholmes/the-institute/issues"
   },
   "homepage": "https://github.com/jordanstholmes/the-institute#readme",
-  "babel": {
-    "presets": [
-      "@babel/env",
-      "@babel/react"
-    ],
-    "plugins": [
-      "babel-plugin-styled-components"
-    ]
-  },
   "devDependencies": {
     "@babel/cli": "^7.1.5",
     "@babel/core": "^7.1.6",
@@ -38,16 +29,23 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1",
+    "jest": "^24.6.0",
+    "jest-babel": "^1.0.1",
     "redux-devtools": "^3.4.2",
     "webpack": "^4.26.1",
     "webpack-cli": "^3.1.2",
     "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.11.2",
+    "enzyme-redux": "^0.2.1",
     "express": "^4.16.4",
+    "fetch-mock": "^7.3.1",
     "isomorphic-fetch": "^2.2.1",
     "mongoose": "^5.3.14",
     "morgan": "^1.9.1",
+    "node-fetch": "^2.3.0",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
@@ -55,6 +53,7 @@
     "react-redux": "^5.1.1",
     "redux": "^4.0.1",
     "redux-logger": "^3.0.6",
+    "redux-mock-store": "^1.5.3",
     "redux-thunk": "^2.3.0",
     "styled-components": "^4.1.2"
   }

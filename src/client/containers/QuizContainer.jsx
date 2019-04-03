@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchQuiz } from '../actions';
+import { fetchQuiz } from '../actions/Actions';
 import Quiz from '../components/Quiz';
 
 const hardCodedQuizId = '5c06c63a585ed5090417a6d7';
