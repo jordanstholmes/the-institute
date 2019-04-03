@@ -5,4 +5,14 @@ jobs:
       - image: circleci/node
     steps:
       - checkout
-      - run: npm install && echo 'Installed npm'
+      - run:
+          name: Install node dependencies
+          command: npm install
+  test:
+    docker:
+      - image: circleci/node
+    steps:
+      - checkout
+      - run:
+          name: Test
+          command: npm test
