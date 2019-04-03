@@ -17,15 +17,6 @@
     "url": "https://github.com/jordanstholmes/the-institute/issues"
   },
   "homepage": "https://github.com/jordanstholmes/the-institute#readme",
-  "babel": {
-    "presets": [
-      "@babel/env",
-      "@babel/react"
-    ],
-    "plugins": [
-      "babel-plugin-styled-components"
-    ]
-  },
   "devDependencies": {
     "@babel/cli": "^7.1.5",
     "@babel/core": "^7.1.6",
@@ -46,6 +37,8 @@
     "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.11.2",
     "express": "^4.16.4",
     "isomorphic-fetch": "^2.2.1",
     "mongoose": "^5.3.14",
