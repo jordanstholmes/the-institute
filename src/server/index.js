@@ -18,6 +18,8 @@ const app = express();
 const logging = process.env.NODE_ENV === 'production' ? morgan('short') : morgan('dev');
 
 app.use(logging);
+app.use(express.static('public'));
+
 app.get('/', (req, res) => {
   console.log('hit root get');
   const reactStr = ReactDOMServer.renderToString(ReactComponents);
@@ -25,9 +27,6 @@ app.get('/', (req, res) => {
   res.send(ssr);
 });
 
-app.use(express.static('public'));
-
-app.use(logging);
 app.get('/videos/:videoId', (req, res) => {
   const { videoId } = req.params;
   getVideoById(videoId)
