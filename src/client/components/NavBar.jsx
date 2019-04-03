@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import HomeIcon from './HomeIcon';
 import SettingsIcon from './SettingsIcon';
+import GearIcon from './GearIcon';
 
 const LeftContentWrapper = styled.div`
   > * {
@@ -59,7 +60,9 @@ const Rotate = styled.div`
 const NavBar = ({ subModuleTitle }) => (
   <StyledNav>
     <LeftContentWrapper>
-      <Rotate><img src="gear40px-min.svg" alt="logo" /></Rotate>
+      <Rotate>
+        <GearIcon />
+      </Rotate>
       <ModuleTitle>The high art of getting appointments</ModuleTitle>
       <div>{'>'}</div>
       <div>{subModuleTitle}</div>
