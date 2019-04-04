@@ -2,16 +2,12 @@ version: 2
 jobs:
   build:
     docker:
-      - image: alpine:3.7
+      - image: circleci/node
     steps:
       - checkout
       - run:
-          name: The first Step
-          command: |
-            echo 'Hello World!'
-            echo 'this is the delivery pipeline'
+          name: Install node dependencies
+          command: npm install
       - run:
-          name: Code Has Arrived
-          command: |
-            ls -al
-            echo '^^^That should look familiar^^^'
+          name: Run Tests
+          command: npm test
