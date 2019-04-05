@@ -4,6 +4,7 @@
       "jest": true
     },
     "rules": {
-      "jsx-a11y/mouse-events-have-key-events": false
+      "jsx-a11y/mouse-events-have-key-events": false,
+      "no-underscore-dangle": 0
     }
 }
