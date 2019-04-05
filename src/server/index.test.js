@@ -1,6 +1,7 @@
 import request from 'supertest';
 // import express from 'express';
-import app from './index';
+import app from './app';
+import { db } from '../../database';
 
 // const app = express();
 
@@ -18,12 +19,23 @@ import app from './index';
 //   });
 // });
 
-describe( 'GET /videos/:videoId', () => {
-  it('responds with json', (done) => {
-    request(app)
-      .get('/vidoes/5c06c63a585ed5090417a6de')
+/*
+I want to test my api routes. What CAN I test?
+- Sends json
+- GET sends 200 status code
+- On error sends correct error code
+*/
+
+describe('GET /videos/:videoId', () => {
+  afterAll(() => {
+    db.close();
+  });
+
+  it('responds with json', () => {
+    return request(app)
+      .get('/videos/5c06c63a585ed5090417a6de')
       .set('Accept', 'application/json')
       .expect('Content-Type', /json/)
-      .expect(200, done);
+      .expect(200);
   });
 });

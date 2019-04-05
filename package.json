@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "dev": "webpack -d & nodemon server.js",
-    "test": "jest --config=./test-config/jest.config.js"
+    "test-client": "jest --config=./test-config/jest.config.js",
+    "test-server": "jest --testEnvironment=node ./src/server "
   },
   "repository": {
     "type": "git",
