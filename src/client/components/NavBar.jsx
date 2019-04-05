@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import HomeIcon from './HomeIcon';
 import SettingsIcon from './SettingsIcon';
 import GearIcon from './GearIcon';
+import Tooltip from './Tooltip';
 
 const LeftContentWrapper = styled.div`
   > * {
@@ -68,8 +69,12 @@ const NavBar = ({ subModuleTitle }) => (
       <div>{subModuleTitle}</div>
     </LeftContentWrapper>
     <RightContentWrapper>
-      <HomeIcon />
-      <SettingsIcon />
+      <Tooltip message="All Modules">
+        <HomeIcon />
+      </Tooltip>
+      <Tooltip message="Settings">
+        <SettingsIcon />
+      </Tooltip>
     </RightContentWrapper>
   </StyledNav>
 );

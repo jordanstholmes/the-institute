@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 const SVG = styled.svg`
-  cursor: pointer;
   :hover {
     fill: ${props => props.theme.accentColor};
   }
@@ -22,7 +21,8 @@ const HomeIcon = () => (
       transform="scale(.03906)"
       d="m16 256l240-192 96 72v-32h48v72l96 80h-48v192h-120v-160h-96v160h-168v-192z"
       strokeLinejoin="round"
-      strokeWidth="12" />
+      strokeWidth="12"
+    />
   </SVG>
 );
 
