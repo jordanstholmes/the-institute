@@ -12,7 +12,7 @@ const browserConfig = {
   resolve: {
     extensions: ['.js', '.jsx'],
   },
-  watch: true,
+  // watch: true,
   watchOptions: {
     aggregateTimeout: 300,
     ignored: /node_modules/,
@@ -41,7 +41,7 @@ const serverConfig = {
   resolve: {
     extensions: ['.js', '.jsx'],
   },
-  watch: true,
+  // watch: true,
   watchOptions: {
     aggregateTimeout: 300,
     ignored: /node_modules/,
