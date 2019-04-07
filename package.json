@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "dev": "webpack -d & nodemon server.js",
-    "test": "jest --config=./test-config/jest.config.js"
+    "test-client": "jest --config=./test-config/jest.config.js ./src/client",
+    "test-server": "jest --config=./test-config/jest.config.js --testEnvironment=node ./src/server "
   },
   "repository": {
     "type": "git",
@@ -32,6 +33,7 @@
     "jest": "^24.6.0",
     "jest-babel": "^1.0.1",
     "redux-devtools": "^3.4.2",
+    "supertest": "^4.0.2",
     "webpack": "^4.26.1",
     "webpack-cli": "^3.1.2",
     "webpack-node-externals": "^1.7.2"
