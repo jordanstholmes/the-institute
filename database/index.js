@@ -4,7 +4,9 @@ import insertVideo from './controllers/insertVideo';
 import getQuizById from './controllers/getQuiz';
 import insertQuiz from './controllers/insertQuiz';
 
-const dbUrl = process.env.DB_URL || 'mongodb://localhost/institute';
+const DB_HOST = process.env.DB_HOST || 'localhost';
+
+const dbUrl = `mongodb://${DB_HOST}/institute`;
 mongoose.connect(dbUrl, { useNewUrlParser: true });
 const db = mongoose.connection;
 

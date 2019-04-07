@@ -9,6 +9,8 @@ RUN npm install && npm run build
 
 EXPOSE 7000
 
+ENV DB_HOST="host.docker.internal"
+
 CMD ["npm", "start"]
 
 # docker run --net=host --rm -p <hostPort>:<dockerExposedPort> <image>
