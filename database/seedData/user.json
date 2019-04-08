@@ -1,0 +1,19 @@
+{
+  "email": "billjones@billyjo.com",
+  "quizResults": [
+    {
+      "quiz_id": "SESSION 9 QUIZ",
+      "answers": [
+        {"question_id": "5c03249659199d4e54f1c044", "answer": ["Speak clearly", "Speak loud to emphasize your points", "Sound relaxed", "Use a tone that shows authority and intelligence", "Give your sales pitch to the gatekeeper"]},
+        {"question_id": "5c03249659199d4e54f1c043", "answer": ["Just be yourself!"]},
+        {"question_id": "5c03249659199d4e54f1c042", "answer": ["40%"]},
+        {"question_id": "5c03249659199d4e54f1c045", "answer": ["False"]},
+        {"question_id": "5c03249659199d4e54f1c041", "answer": ["True"]},
+        {"question_id": "5c03249659199d4e54f1c040", "answer": ["False"]}
+      ]
+    }
+
+  ]
+}
+
+

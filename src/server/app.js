@@ -9,7 +9,7 @@ import fetch from 'isomorphic-fetch';
 import indexTemplate from './indexTemplate';
 import ReactComponents from './rootReact';
 
-import { getVideoById, getQuizById } from '../../database';
+import { Controller } from '../../database';
 
 const app = express();
 const logging = process.env.NODE_ENV === 'production' ? morgan('short') : morgan('dev');
@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 
 app.get('/videos/:videoId', (req, res) => {
   const { videoId } = req.params;
-  getVideoById(videoId)
+  Controller.getVideoById(videoId)
     .then(video => res.send(video))
     .catch((err) => {
       console.error('getVideoById error:', err);
@@ -36,7 +36,7 @@ app.get('/videos/:videoId', (req, res) => {
 
 app.get('/quizzes/:quizId', (req, res) => {
   const { quizId } = req.params;
-  getQuizById(quizId)
+  Controller.getQuizById(quizId)
     .then(quiz => res.send(quiz))
     .catch((err) => {
       console.error('getQuizByName error:', err);
