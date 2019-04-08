@@ -11,6 +11,10 @@ EXPOSE 7000
 
 ENV DB_HOST="host.docker.internal"
 
-CMD ["npm", "start"]
+CMD ["npm", "run", "docker-dev"]
 
-# docker run --net=host --rm -p <hostPort>:<dockerExposedPort> <image>
+# cli commands
+# docker build -t nodan .
+# docker run --rm -p 2000:7000 -v $(pwd):/app --name institue nodan
+
+# docker run --rm -p <hostPort>:<dockerExposedPort> -v $(pwd):/app --name institute  <image>
