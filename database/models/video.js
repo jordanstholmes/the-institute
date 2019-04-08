@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
 const { ObjectId } = mongoose.Schema.Types;
 
@@ -10,4 +10,4 @@ const videoSchema = mongoose.Schema({
 
 const Video = mongoose.model('Video', videoSchema);
 
-export default Video;
+module.exports = Video;
