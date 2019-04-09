@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Controller = require('./controller');
 
 const DB = process.env.DB || 'institute';
-const HOST = process.env.DB_HOST || 'localhost';
+const HOST = process.env.DB_HOST || 'mongo';
 
 mongoose.connect(`mongodb://${HOST}/${DB}`, {
   useNewUrlParser: true,

@@ -1,15 +1,18 @@
 FROM node:10.12.0-alpine
 
-WORKDIR /app
+WORKDIR /bindmount
 
 # Is it best practice to copy my node_modules?
-COPY . /app
+COPY package-lock.json package.json ./
 
-RUN npm install && npm run build
+RUN npm install --no-progress --ignore-optional
+# RUN ["npm", "run", "seed"]
 
 EXPOSE 7000
 
-ENV DB_HOST="host.docker.internal"
+# ENV DB_HOST="host.docker.internal"
+
+# CMD ["npm", "run", "docker-dev"]
 
 CMD ["npm", "run", "docker-dev"]
 

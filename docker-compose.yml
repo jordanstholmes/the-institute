@@ -1,0 +1,14 @@
+version: '3'
+services:
+  web:
+    build:
+      context: .
+    depends_on:
+      - 'mongo'
+    ports:
+      - '7000:7000'
+    volumes:
+      - .:/bindmount:rw
+  mongo:
+    image: mongo
+    restart: always
