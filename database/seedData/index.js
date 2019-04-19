@@ -1,20 +1,24 @@
-const quizMock = require('./quiz.json');
-const videoMocks = require('./video.json');
+const fs = require('fs');
+const path = require('path');
+const generateVideos = require('./generateSeedData.js');
 
-const { Controller, db } = require('../index');
+/*
+Write function to write seed file
+> Do it with write file and small amount
+> run with npm script
+> Switch to console and Use pipe and gzip
+> unzip it and check it looks right
+> Can this work with a 1k, then 1mil, then 5mil
+*/
 
-db.dropDatabase()
-  .then(() => Controller.insertQuiz(quizMock))
-  .then(({ _id }) => {
-    videoMocks[0].quiz_id = _id;
-    videoMocks[1].quiz_id = _id;
-    return Controller.insertVideo(videoMocks);
-  })
-  .then(() => {
-    console.log('finished seeding!');
-    db.close();
-  })
-  .catch((err) => {
-    console.error(err);
-    db.close();
+const writeSeedFile = () => {
+  const videos = generateVideos(3);
+  const outputPath = path.join(__dirname, './seedVideos.json');
+
+  fs.writeFile(outputPath, JSON.stringify(videos), (err) => {
+    if (err) throw err;
+    console.log('done writing?');
   });
+};
+
+writeSeedFile();
