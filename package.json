@@ -7,7 +7,7 @@
     "dev": "webpack -d & nodemon server.js",
     "test-client": "jest --config=./test-config/jest.config.js ./src/client",
     "test-server": "jest --config=./test-config/jest.config.js --testEnvironment=node ./src/server ",
-    "seed": "node ./database/seedData/index.js"
+    "seed": "node ./database/seedData/index.js | gzip -c > ./database/seedData/seed.gz"
   },
   "repository": {
     "type": "git",

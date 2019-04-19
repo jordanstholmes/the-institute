@@ -12,13 +12,14 @@ Write function to write seed file
 */
 
 const writeSeedFile = () => {
-  const videos = generateVideos(3);
-  const outputPath = path.join(__dirname, './seedVideos.json');
+  const videos = generateVideos(6);
+  // const outputPath = path.join(__dirname, './seedVideos.json');
 
-  fs.writeFile(outputPath, JSON.stringify(videos), (err) => {
-    if (err) throw err;
-    console.log('done writing?');
-  });
+  // fs.writeFile(outputPath, JSON.stringify(videos), (err) => {
+  //   if (err) throw err;
+  //   console.log('done writing?');
+  // });
+  console.log(JSON.stringify(videos));
 };
 
 writeSeedFile();
