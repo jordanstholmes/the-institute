@@ -9,7 +9,7 @@ Write function to write seed file
 > Can this work with a 1k, then 1mil, then 5mil
 */
 
-const writeSeedFile = () => {
+const writeSeedFile = (callback) => {
   // get value of first arg
   const firstArg = process.argv[2];
   if (firstArg.indexOf('--amount=') === -1) {
@@ -27,20 +27,37 @@ const writeSeedFile = () => {
   const LOG_FREQUENCY = 100000;
   console.log('[');
 
-  for (let i = 1; i <= numOfRecords; i += 1) {
-    const video = generateVideo();
-    video.id = i;
-    console.log(JSON.stringify(video));
+  let i = 0;
+  const { stdout } = process;
 
-    if (i % LOG_FREQUENCY === 0) {
-      console.error('Wrote:\n', video);
+  const writeToStdOut = () => {
+    let hasSpace = true;
+
+    while (i <= numOfRecords && hasSpace) {
+      i += 1;
+      let video = generateVideo();
+      video.id = i;
+      video = JSON.stringify(video);
+
+      if (i % LOG_FREQUENCY === 0) {
+        console.error('Wrote:\n', video);
+      }
+
+      if (i === numOfRecords) {
+        stdout.write(`${video}\n`, 'utf8', callback);
+      } else {
+        hasSpace = stdout.write(`${video}\n,`, 'utf8');
+      }
     }
-  }
+    if (i < numOfRecords) stdout.once('drain', writeToStdOut);
+  };
 
+  writeToStdOut();
+};
+
+writeSeedFile(() => {
   console.log(']');
 
   const runTime = process.uptime();
   console.error(`seed generation took ${runTime / 60} minutes`);
-};
-
-writeSeedFile();
+});

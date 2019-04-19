@@ -7,8 +7,8 @@
     "dev": "webpack -d & nodemon server.js",
     "test-client": "jest --config=./test-config/jest.config.js ./src/client",
     "test-server": "jest --config=./test-config/jest.config.js --testEnvironment=node ./src/server ",
-    "seed": "node ./database/seedData/index.js --amount=1000000 | gzip -c > ./database/seedData/seed.gz",
-    "unzip": "gunzip -c ./database/seedData/seed.gz > ./database/seedData/seed.json"
+    "seed": "node ./database/seedData/index.js --amount=5000000 | lzop -c > ./database/seedData/seed.lzo",
+    "unzip": "lzop -dc ./database/seedData/seed.lzo > ./database/seedData/seed.json"
   },
   "repository": {
     "type": "git",
