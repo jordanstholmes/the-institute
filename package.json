@@ -7,7 +7,7 @@
     "dev": "webpack -d & nodemon server.js",
     "test-client": "jest --config=./test-config/jest.config.js ./src/client",
     "test-server": "jest --config=./test-config/jest.config.js --testEnvironment=node ./src/server ",
-    "seed": "node ./database/seedData/index.js --amount=5000000 | lzop -c > ./database/seedData/seed.lzo",
+    "seed": "node ./database/seedData/index.js --amount=10000000 | lzop -c > ./database/seedData/seed.lzo && lzop -dc ./database/seedData/seed.lzo > ./database/seedData/seed.json",
     "unzip": "lzop -dc ./database/seedData/seed.lzo > ./database/seedData/seed.json"
   },
   "repository": {
