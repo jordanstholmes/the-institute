@@ -7,7 +7,7 @@
     "dev": "webpack -d & nodemon server.js",
     "test-client": "jest --config=./test-config/jest.config.js ./src/client",
     "test-server": "jest --config=./test-config/jest.config.js --testEnvironment=node ./src/server ",
-    "seed": "node ./database/seedData/index.js --amount=10000000 | lzop -c > ./database/seedData/seed.lzo && lzop -dc ./database/seedData/seed.lzo > ./database/seedData/seed.json",
+    "seed": "node ./database/seed/index.js --amount=10000000 | lzop -c > ./database/seed/seed.lzo && lzop -dc ./database/seed/seed.lzo > ./database/seed/seed.json",
     "unzip": "lzop -dc ./database/seedData/seed.lzo > ./database/seedData/seed.json"
   },
   "repository": {
@@ -32,7 +32,6 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1",
-    "faker": "^4.1.0",
     "jest": "^24.6.0",
     "jest-babel": "^1.0.1",
     "redux-devtools": "^3.4.2",
@@ -46,6 +45,7 @@
     "enzyme-adapter-react-16": "^1.11.2",
     "enzyme-redux": "^0.2.1",
     "express": "^4.16.4",
+    "faker": "^4.1.0",
     "fetch-mock": "^7.3.1",
     "isomorphic-fetch": "^2.2.1",
     "mongoose": "^5.3.14",
