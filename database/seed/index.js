@@ -1,31 +1,25 @@
 const config = require('./seed.config.js');
 const { generateVideos } = require('./generateVideos.js');
 
-const getCLIAmountArg = () => {
-  const firstArg = process.argv[2];
+const validateConfig = () => {
+  const { SEED_TOTAL, MAX_BATCH_SIZE } = config;
 
-  if (!firstArg || firstArg.indexOf('--amount=') === -1) {
-    console.error('Wrong or absent --amount argument, please use "--amount=NUMBER_HERE"');
-    process.exit(1);
+  if (SEED_TOTAL < 1) {
+    throw new Error('CONFIG-ERR: SEED_TOTAL must be greater than zero');
   }
 
-  const numOfRecords = Number(firstArg.split('=')[1]);
-
-  if (Number.isNaN(numOfRecords) || numOfRecords < 1) {
-    console.error('amount was not a valid number');
-    process.exit(1);
+  if (Number.isNaN(SEED_TOTAL) || Number.isNaN(MAX_BATCH_SIZE)) {
+    throw new Error('CONFIG-ERR: SEED_TOTAL and MAX_BATCH_SIZE must be numeric');
   }
 
-  if (numOfRecords % config.MAX_BATCH_SIZE !== 0) {
-    console.error('amount must be perfectly divisble by MAX_BATCH_SIZE');
-    process.exit(1);
+  if (SEED_TOTAL % MAX_BATCH_SIZE !== 0) {
+    throw new Error('CONFIG-ERR: SEED_TOTAL must be perfectly divisible by MAX_BATCH_SIZE');
   }
-
-  return numOfRecords;
 };
 
 const writeSeedFile = (callback) => {
-  const numOfRecords = getCLIAmountArg();
+  validateConfig();
+
   const { stdout } = process;
   let i = 0;
 
@@ -33,8 +27,8 @@ const writeSeedFile = (callback) => {
     let hasSpace = true;
     let videoBatch;
 
-    while (i <= numOfRecords && hasSpace) {
-      const batch = generateVideos(i, numOfRecords, config.MAX_BATCH_SIZE);
+    while (i <= config.SEED_TOTAL && hasSpace) {
+      const batch = generateVideos(i, config.SEED_TOTAL, config.MAX_BATCH_SIZE);
       videoBatch = batch.videos;
       i = batch.currentId;
 
@@ -42,14 +36,14 @@ const writeSeedFile = (callback) => {
         console.error('Wrote:\n', i);
       }
 
-      if (i === numOfRecords) {
+      if (i === config.SEED_TOTAL) {
         stdout.write(videoBatch, callback);
       } else {
         hasSpace = stdout.write(videoBatch);
       }
     }
 
-    if (i < numOfRecords) stdout.once('drain', writeToStdOut);
+    if (i < config.SEED_TOTAL) stdout.once('drain', writeToStdOut);
   };
 
   writeToStdOut();
