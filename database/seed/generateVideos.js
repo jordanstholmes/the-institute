@@ -10,7 +10,7 @@ const generateVideos = (startId, endId, maxBatchSize) => {
   let randomModuleNum;
   let randomSubModuleNum;
 
-  while (id <= endId && id - startId < maxBatchSize) {
+  while (id <= endId && videos.length < maxBatchSize) {
     id += 1;
     randomIdx = Math.floor(Math.random() * config.VIDEO_URLS.length);
     randomVideoUrl = config.VIDEO_URLS[randomIdx];
@@ -26,7 +26,9 @@ const generateVideos = (startId, endId, maxBatchSize) => {
       submoduleNum: randomSubModuleNum,
     }));
   }
-  return { id, videos: videos.join(',\n') };
+
+  videos.push(''); // makes the join add '\n' to end of batch
+  return { currentId: id, videos: videos.join('\n') };
 };
 
-module.exports = generateVideos;
+module.exports = { generateVideos };
