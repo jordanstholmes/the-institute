@@ -1,13 +1,17 @@
 config:
   target: 'http://localhost:7000'
+  http:
+    pool: 10 # all HTTP requests from all virtual users will be sent over the same 10 connections
   phases:
     - duration: 60
-      arrivalRate: 100
+      arrivalRate: 10
   payload:
     path: './video_ids.csv'
     fields:
       - 'id'
 scenarios:
   - flow:
-    - get:
-        url: "/videos/{{ id }}"
+    - loop:
+      - get:
+          url: "/videos/{{ id }}"
+      count: 70

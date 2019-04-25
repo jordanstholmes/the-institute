@@ -1,4 +1,3 @@
-require('newrelic');
 import morgan from 'morgan';
 import express from 'express';
 // eslint-disable-next-line
