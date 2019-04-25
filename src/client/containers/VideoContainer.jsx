@@ -6,7 +6,7 @@ const mapStateToProps = state => ({
   source: state.video.source,
 });
 
-const mapDispatchToProps = dispatch => ({ fetchVideo: () => dispatch(fetchVideo('5c06c63a585ed5090417a6de')) });
+const mapDispatchToProps = dispatch => ({ fetchVideo: (videoId) => dispatch(fetchVideo(videoId)) });
 
 const VideoContainer = connect(mapStateToProps, mapDispatchToProps)(Video);
 

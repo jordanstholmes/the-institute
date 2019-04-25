@@ -4,7 +4,6 @@ import ReactDom from 'react-dom';
 import { Provider } from 'react-redux';
 import styled, { ThemeProvider } from 'styled-components';
 import VideoContainer from './containers/VideoContainer';
-// import QuizContainer from './containers/QuizContainer';
 import NavBarContainer from './containers/NavBarContainer';
 import VideoList from './components/VideoList';
 import store from './store';
@@ -35,7 +34,6 @@ const App = () => (
       <VideoContainer />
       <VideoList />
     </RowLayout>
-    {/* <QuizContainer /> */}
   </div>
 );
 

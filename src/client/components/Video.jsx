@@ -1,16 +1,15 @@
 import React from 'react';
-import styled from 'styled-components';
 import ReactPlayer from 'react-player';
 import PropTypes from 'prop-types';
 
 class Video extends React.Component {
   componentDidMount() {
     const { fetchVideo } = this.props;
-    fetchVideo();
+    fetchVideo(9000000);
   }
 
   render() {
-    const { source, fetchVideo } = this.props;
+    const { source } = this.props;
     return (
       <div>
         <ReactPlayer url={source} playing={false} width="900px" height="506px" />

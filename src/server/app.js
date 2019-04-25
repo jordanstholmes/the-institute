@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
 app.get('/videos/:videoId', (req, res) => {
   const { videoId } = req.params;
   Controller.getVideoById(videoId)
-    .then(video => res.send(video))
+    .then(([video]) => res.send(video))
     .catch((err) => {
       console.error('getVideoById error:', err);
       res.sendStatus(404);
