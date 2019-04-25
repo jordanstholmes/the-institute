@@ -40,7 +40,7 @@ app.get('/quizzes/:quizId', (req, res) => {
     .then(quiz => res.send(quiz))
     .catch((err) => {
       console.error('getQuizByName error:', err);
-      res.send(404);
+      res.sendStatus(404);
     });
 });
 
