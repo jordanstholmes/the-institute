@@ -1,13 +1,5 @@
-const mongoose = require('mongoose');
-const Model = require('../models');
-
-const { ObjectId } = mongoose.Types;
-const { Quiz, Video } = Model;
-
-module.exports.getQuizById = quizId => Quiz.findById({ _id: quizId });
-
-module.exports.insertQuiz = quiz => Quiz.create(quiz);
-
-module.exports.getVideoById = videoId => Video.findById({ _id: ObjectId(videoId) });
+const { Video } = require('../models');
 
 module.exports.insertVideo = video => Video.create(video);
+
+module.exports.batchInsert = videos => Video.insertMany(videos);
