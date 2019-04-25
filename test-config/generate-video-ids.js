@@ -7,7 +7,7 @@ const writer = fs.createWriteStream(path.join(__dirname, 'video_ids.csv'));
 
 let videoId;
 
-for (let i = 0; i < ONE_MILLION; i += 1) {
+for (let i = 0; i < 100; i += 1) {
   videoId = Math.floor(Math.random() * ONE_MILLION) + NINE_MILLION; // number from 9 - 10 million
   writer.write(`${videoId}\n`);
 }

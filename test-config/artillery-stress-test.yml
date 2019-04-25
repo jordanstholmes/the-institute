@@ -2,12 +2,11 @@ config:
   target: 'http://localhost:7000'
   phases:
     - duration: 60
-      arrivalRate: 20
+      arrivalRate: 100
   payload:
     path: './video_ids.csv'
     fields:
       - 'id'
-    order: 'sequence'
 scenarios:
   - flow:
     - get:
