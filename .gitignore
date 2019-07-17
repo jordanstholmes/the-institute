@@ -22,3 +22,12 @@ node_modules/
 bundle.js
 server.js
 
+# seed data
+seed.*
+test-config/video_ids.csv
+
+# new relic config
+newrelic.js
+
+# Redis files
+dump.rdb

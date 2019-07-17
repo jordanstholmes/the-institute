@@ -4,14 +4,17 @@
   "description": "MVP for a new and improved Chet Holmes Institute UX",
   "private": true,
   "scripts": {
-    "start": "node server.js",
-    "build": "webpack -d",
-    "watch": "webpack -d -w",
-    "docker-dev": "nodemon server.js",
-    "dev": "webpack -d & nodemon server.js",
+    "dev:build": "webpack -dw",
+    "dev:start": "nodemon server.js",
+    "build": "webpack -p",
+    "prod": "node server.js",
     "test-client": "jest --config=./test-config/jest.config.js ./src/client",
     "test-server": "jest --config=./test-config/jest.config.js --testEnvironment=node ./src/server ",
-    "seed": "node ./database/seedData/index.js"
+    "generate-seed": "node ./database/seed/index.js | lzop -c > ./database/seed/seed.lzo && lzop -dc ./database/seed/seed.lzo > ./database/seed/seed.json",
+    "insert-seed": "lzop -dc ./database/seed/seed.lzo | node ./database/seed/insertSeed.js && echo 'insertion successful!'",
+    "unzip": "lzop -dc ./database/seedData/seed.lzo > ./database/seedData/seed.json",
+    "generate-stresstest-ids": "node ./test-config/generate-video-ids.js",
+    "stress": "artillery run ./test-config/artillery-stress-test.yml"
   },
   "repository": {
     "type": "git",
@@ -49,6 +52,7 @@
     "enzyme-adapter-react-16": "^1.11.2",
     "enzyme-redux": "^0.2.1",
     "express": "^4.16.4",
+    "faker": "^4.1.0",
     "fetch-mock": "^7.3.1",
     "isomorphic-fetch": "^2.2.1",
     "mongoose": "^5.3.14",

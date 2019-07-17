@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
-const { ObjectId } = mongoose.Schema.Types;
-
 const videoSchema = mongoose.Schema({
+  id: { type: Number, index: { unique: true } },
   title: String,
   source: String,
-  quiz_id: ObjectId,
+  moduleNum: Number,
+  submoduleNum: Number,
 });
 
 const Video = mongoose.model('Video', videoSchema);
