@@ -4,7 +4,8 @@
   "description": "MVP for a new and improved Chet Holmes Institute UX",
   "private": true,
   "scripts": {
-    "dev": "webpack -d & nodemon server.js",
+    "dev:build": "webpack -dw",
+    "dev:start": "nodemon server.js",
     "build": "webpack -p",
     "prod": "node server.js",
     "test-client": "jest --config=./test-config/jest.config.js ./src/client",
