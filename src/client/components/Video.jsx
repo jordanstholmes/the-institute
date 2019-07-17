@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 class Video extends React.Component {
   componentDidMount() {
     const { fetchVideo } = this.props;
-    fetchVideo(9000000);
+    fetchVideo(20);
   }
 
   render() {
