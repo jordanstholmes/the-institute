@@ -48,6 +48,7 @@
     "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
+    "dotenv-webpack": "^1.7.0",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.11.2",
     "enzyme-redux": "^0.2.1",
