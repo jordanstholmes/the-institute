@@ -10,9 +10,9 @@
     "prod": "node server.js",
     "test-client": "jest --config=./test-config/jest.config.js ./src/client",
     "test-server": "jest --config=./test-config/jest.config.js --testEnvironment=node ./src/server ",
-    "generate-seed": "node ./database/seed/index.js | lzop -c > ./database/seed/seed.lzo && lzop -dc ./database/seed/seed.lzo > ./database/seed/seed.json",
-    "insert-seed": "lzop -dc ./database/seed/seed.lzo | node ./database/seed/insertSeed.js && echo 'insertion successful!'",
-    "unzip": "lzop -dc ./database/seedData/seed.lzo > ./database/seedData/seed.json",
+    "generate-seed": "node ./database/seed/index.js | gzip -c > ./database/seed/seed.gzip && gzip -dc ./database/seed/seed.gzip > ./database/seed/seed.json",
+    "insert-seed": "gzip -dc ./database/seed/seed.gzip | node ./database/seed/insertSeed.js && echo 'insertion successful!'",
+    "unzip": "gzip -dc ./database/seedData/seed.gzip > ./database/seedData/seed.json",
     "generate-stresstest-ids": "node ./test-config/generate-video-ids.js",
     "stress": "artillery run ./test-config/artillery-stress-test.yml"
   },

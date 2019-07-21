@@ -4,3 +4,6 @@ img-src
 .circleci
 server.js
 .env
+seed.json
+seed.lzo
+seed.gzip
