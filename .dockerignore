@@ -3,3 +3,4 @@ public/bundle.js
 img-src
 .circleci
 server.js
+.env
