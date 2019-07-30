@@ -1,4 +1,4 @@
-FROM node:10.12.0-alpine
+FROM node:latest
 
 WORKDIR /bindmount
 
@@ -14,7 +14,7 @@ EXPOSE 7000
 
 # CMD ["npm", "run", "docker-dev"]
 
-CMD ["npm", "run", "docker-dev"]
+CMD ["/bin/bash", "seed-and-start.sh"]
 
 # cli commands
 # docker build -t nodan .

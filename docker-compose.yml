@@ -4,11 +4,9 @@ services:
     build:
       context: .
     depends_on:
-      - 'mongo'
+      - 'db'
     ports:
       - '7000:7000'
-    volumes:
-      - .:/bindmount:rw
-  mongo:
+  db:
     image: mongo
     restart: always
