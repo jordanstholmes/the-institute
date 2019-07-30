@@ -13,7 +13,8 @@
     "insert-seed": "lzop -dc ./database/seed/seed.lzo | node ./database/seed/insertSeed.js && echo 'insertion successful!'",
     "unzip": "lzop -dc ./database/seedData/seed.lzo > ./database/seedData/seed.json",
     "generate-stresstest-ids": "node ./test-config/generate-video-ids.js",
-    "stress": "artillery run ./test-config/artillery-stress-test.yml"
+    "stress": "artillery run ./test-config/artillery-stress-test.yml",
+    "remove-seed": "./database/seed/remove-seed.sh"
   },
   "repository": {
     "type": "git",
