@@ -1,6 +1,6 @@
 const readline = require('readline');
 const { Controller, db } = require('../index.js');
-const { LOG_FREQUENCY, MAX_BATCH_SIZE, SEED_TOTAL } = require('./seed.config.js');
+const { LOG_FREQUENCY, MAX_BATCH_SIZE, SEED_TOTAL } = require('./config.js');
 
 const insertSeed = () => {
   const reader = readline.createInterface({ input: process.stdin });

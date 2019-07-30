@@ -1,5 +1,5 @@
 const faker = require('faker');
-const config = require('./seed.config.js');
+const config = require('./config.js');
 
 const generateVideos = (startId, endId, maxBatchSize) => {
   const videos = [];

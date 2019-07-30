@@ -1,4 +1,4 @@
-const config = require('./seed.config.js');
+const config = require('./config.js');
 const { generateVideos } = require('./generateVideos.js');
 
 const validateConfig = () => {
