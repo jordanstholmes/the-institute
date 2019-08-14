@@ -1,9 +1,0 @@
-{
-    "extends": "airbnb",
-    "env": {
-      "jest": true
-    },
-    "rules": {
-      "jsx-a11y/mouse-events-have-key-events": false
-    }
-}

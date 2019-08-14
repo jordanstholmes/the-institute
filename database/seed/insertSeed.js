@@ -13,7 +13,6 @@ const insertSeed = () => {
     const seedLine = JSON.parse(line);
     read += 1;
     buffer.push(seedLine);
-
     if (buffer.length >= MAX_BATCH_SIZE) {
       const batch = buffer;
       buffer = [];
@@ -45,8 +44,10 @@ const insertSeed = () => {
 
   const checkForTimeout = (previousWriteCount) => {
     const currentWriteCount = written;
-    if (previousWriteCount === written) return reader.close();
-
+    if (previousWriteCount === written) {
+      console.log('TIMED OUT!!');
+      return reader.close();
+    }
     return setTimeout(() => {
       checkForTimeout(currentWriteCount);
     }, 10 * 1000);
