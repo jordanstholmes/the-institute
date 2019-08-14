@@ -12,7 +12,6 @@
     "test-server": "jest --config=./test-config/jest.config.js --testEnvironment=node ./src/server ",
     "generate-seed": "./database/seed/generate-seed.sh",
     "insert-seed": "./database/seed/insert-seed.sh",
-    "unzip": "lzop -dc ./database/seedData/seed.lzo > ./database/seedData/seed.json",
     "generate-stresstest-ids": "node ./test-config/generate-video-ids.js",
     "stress": "artillery run ./test-config/artillery-stress-test.yml",
     "remove-seed": "./database/seed/remove-seed.sh"

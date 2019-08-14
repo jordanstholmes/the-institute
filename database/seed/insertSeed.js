@@ -8,7 +8,6 @@ const insertSeed = () => {
   let written = 0;
   let lastLoopEndTime = 0;
   let buffer = [];
-
   reader.on('line', (line) => {
     const seedLine = JSON.parse(line);
     read += 1;

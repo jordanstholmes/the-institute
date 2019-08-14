@@ -5,7 +5,7 @@ const VIDEO_URLS = [
   'https://vimeo.com/238981026/b5de19aeb2',
 ];
 
-const SEED_TOTAL = 1e7;
+const SEED_TOTAL = 1e6;
 const MAX_NUM_OF_MODULES = 12; // arbitrarily chosen
 const MAX_SUBMODULES = 15; // arbitrarily chosen
 const MAX_BATCH_SIZE = 500; // Batch to avoid running out of RAM
