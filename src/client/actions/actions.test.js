@@ -33,7 +33,7 @@ describe('Actions', () => {
       });
     });
 
-    it(`creates ${types.RECEIVE_VIDEO_FAILURE}`, () => {
+    it(`creates ${types.RECEIVE_VIDEO_FAILURE} on fetch failure`, () => {
       const store = mockStore({ video: {} });
       const err = new Error('failed to fetch');
 
