@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const nodeExternals = require('webpack-node-externals');
+const Dotenv = require('dotenv-webpack');
 
 const browserConfig = {
   entry: './src/client/index.jsx',
@@ -53,6 +54,7 @@ const serverConfig = {
     new webpack.DefinePlugin({
       __isBrowser__: 'false',
     }),
+    new Dotenv(),
   ],
 };
 

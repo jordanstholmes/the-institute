@@ -18,6 +18,10 @@ app.use(logging);
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
+  res.send('Hello world!');
+});
+
+app.get('/', (req, res) => {
   console.log('hit root get');
   const reactStr = ReactDOMServer.renderToString(ReactComponents);
   const ssr = indexTemplate(reactStr);
