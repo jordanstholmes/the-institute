@@ -1,8 +1,8 @@
 
 const VIDEO_URLS = [
-  'https://player.vimeo.com/video/109855756?color=ff0179&title=0&byline=0&portrait=0',
-  'https://player.vimeo.com/video/109259708?title=0&byline=0&portrait=0',
-  'https://vimeo.com/238981026/b5de19aeb2',
+  'https://vimeo.com/33219961',
+  'https://vimeo.com/71336599',
+  'https://vimeo.com/41325185',
 ];
 
 const SEED_TOTAL = 1e3;
