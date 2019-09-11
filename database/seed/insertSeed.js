@@ -1,5 +1,5 @@
 const readline = require('readline');
-const { Controller, db } = require('../index.js');
+const { Model, db } = require('../index.js');
 const { LOG_FREQUENCY, MAX_BATCH_SIZE, SEED_TOTAL } = require('./config.js');
 
 const insertSeed = () => {
@@ -18,7 +18,7 @@ const insertSeed = () => {
     if (buffer.length >= MAX_BATCH_SIZE) {
       const batch = buffer;
       buffer = [];
-      Controller.batchInsert(batch)
+      Model.Video.insertMany(batch)
         .then((res) => {
           written += res.length;
 

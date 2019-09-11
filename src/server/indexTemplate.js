@@ -1,6 +1,6 @@
 const favIconUri = 'https://s3-us-west-1.amazonaws.com/chet-holmes-institute/red-gear.png';
 
-const indexHTMLTemplate = reactStr => `
+const generateStaticPage = reactStr => `
   <!DOCTYPE html>
   <html>
 
@@ -15,6 +15,7 @@ const indexHTMLTemplate = reactStr => `
       <div id="app">${reactStr}</div>
     </body>
     <script src="./bundle.js"></script>
-  </html>`;
+  </html>
+`;
 
-export default indexHTMLTemplate;
+export default generateStaticPage;
