@@ -14,7 +14,7 @@ EXPOSE 7000
 
 # CMD ["npm", "run", "docker-dev"]
 
-CMD ["/bin/bash", "./seed-and-start.sh"]
+CMD ["/bin/bash", "./docker/seed-and-start.sh"]
 
 # cli commands
 # docker build -t nodan .

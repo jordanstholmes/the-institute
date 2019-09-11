@@ -2,6 +2,6 @@ version: '3'
 services:
   web:
     volumes:
-      - .:/bindmount:rw
+      - ../:/bindmount:rw
     environment:
     - NODE_ENV=development

@@ -6,8 +6,8 @@
   "scripts": {
     "build:dev": "webpack -dw",
     "start:dev": "nodemon server.js",
-    "docker:build": "./docker-build.sh",
-    "docker:run": "./docker-run.sh",
+    "docker:build": "./docker/docker-build.sh",
+    "docker:run": "./docker/docker-run.sh",
     "build": "webpack -p",
     "start": "node server.js",
     "test:client": "jest -w --config=./test-config/jest.config.js ./src/client",
