@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import styled, { ThemeProvider } from 'styled-components';
 import VideoContainer from './containers/VideoContainer';
 import NavBarContainer from './containers/NavBarContainer';
-import VideoList from './components/VideoList';
+import VideoListContainer from './containers/VideoListContainer';
 import store from './store';
 
 import GlobalStyle from './components/styledGlobalStyles';
@@ -32,7 +32,7 @@ const App = () => (
     <NavBarContainer />
     <RowLayout>
       <VideoContainer />
-      <VideoList />
+      <VideoListContainer />
     </RowLayout>
   </div>
 );

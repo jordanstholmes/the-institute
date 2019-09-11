@@ -1,6 +1,7 @@
 import { REQUEST_VIDEO, RECEIVE_VIDEO } from '../actions/ActionTypes';
 
 const defaultVideo = {
+  _id: 0,
   id: undefined,
   title: '',
   source: '',
