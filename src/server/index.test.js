@@ -15,7 +15,7 @@ describe('GET /videos/:videoId', () => {
   });
 
   it('responds with json', () => request(app)
-    .get('/videos/5c06c63a585ed5090417a6de')
+    .get('/videos/10')
     .set('Accept', 'application/json')
     .expect('Content-Type', /json/)
     .expect(200));
