@@ -19,7 +19,7 @@ const browserConfig = {
   },
   module: {
     rules: [
-      { test: /\.(js|jsx)$/, use: 'babel-loader' },
+      { test: /\.jsx?$/, use: 'babel-loader' },
     ],
   },
   plugins: [
@@ -47,7 +47,7 @@ const serverConfig = {
   },
   module: {
     rules: [
-      { test: /\.(js|jsx)$/, use: 'babel-loader' },
+      { test: /\.jsx?$/, use: 'babel-loader' },
     ],
   },
   plugins: [
