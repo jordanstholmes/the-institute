@@ -23,5 +23,7 @@
         "react"
     ],
     "rules": {
+      "jsx-a11y/mouse-events-have-key-events": false,
+      "no-underscore-dangle": 0
     }
 }
