@@ -48,7 +48,7 @@
     "redux-devtools": "^3.4.2",
     "supertest": "^4.0.2",
     "webpack": "^4.39.3",
-    "webpack-cli": "^3.1.2",
+    "webpack-cli": "^3.3.12",
     "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
